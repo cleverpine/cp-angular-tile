@@ -1,0 +1,76 @@
+.home-page {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  background-color: gray;
+  flex-direction: column;
+
+  .tiles {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+
+    ::ng-deep.tile {
+
+      .default,
+      .hover {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .hover {
+        color: blue;
+        font-size: 1.3rem;
+
+        .title-wrapper {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 10px 0;
+          .material-icons {
+            font-size: 30px;
+          }
+        }
+
+        .mobile-header {
+          display: none;
+        }
+
+        .description {
+          padding-bottom: 10px;
+          font-size: 1.4rem;
+          letter-spacing: 0.25px;
+        }
+      }
+
+      .icon {
+        width: 100px;
+        height: 100px;
+      }
+
+      .title {
+        font-weight: 800;
+        font-size: 2rem;
+        text-align: center;
+        color: blue;
+      }
+
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .home-page {
+    justify-content: flex-start;
+    .tiles {
+      flex-direction: column;
+
+      ::ng-deep.tile {
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+    }
+  }
+}
