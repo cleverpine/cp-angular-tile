@@ -11,6 +11,21 @@ pipeline {
   }
 
   stages {
+    stage("Build") {
+      when {
+        branch 'main'
+      }
+
+      steps {
+        script {
+          sh """
+            npm install
+            npm run build-library
+          """
+        }
+      }
+    }
+
     stage("Deployment (Artifactory)") {
       when {
         branch 'main'
@@ -26,8 +41,6 @@ pipeline {
       steps {
         script {
           sh """
-            npm install
-            npm run build-library
             cd dist/tile
             npm publish
           """
