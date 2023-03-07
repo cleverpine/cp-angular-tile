@@ -2,7 +2,7 @@
   position: relative;
   display: block;
   background-color: #ffffff;
-  width: 350px;
+  width: 320px;
   height: 300px;
   padding: 16px;
   text-decoration: none;
@@ -38,10 +38,9 @@
     width: 100%;
     height: initial;
 
-    &:hover {
-      .default {
-        opacity: 1;
-      }
+    .default,
+    .default:hover {
+      opacity: 1;
     }
     .hover {
       display: none !important;
