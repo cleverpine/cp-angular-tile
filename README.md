@@ -1,27 +1,56 @@
-# TileComponent
+Usage instructions for Tile Component
+The Tile Component provides a component that can be used to create a tile with hover effect. Here are the steps to use the library in your Angular project:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+## Installation
+To use the Tile Component, you need to install it as a dependency in your Angular project. Run the following command in your project's root directory:
 
-## Development server
+`npm install @lht/tile --save`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This will install the library and save it as a dependency in your project's `package.json` file.
 
-## Code scaffolding
+## Importing the module
+After installing the library, you need to import the TileModule in your Angular module.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```typescript
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { TileModule } from '@lht/tile';
 
-## Build
+@NgModule({
+  imports: [BrowserModule, TileModule],
+  declarations: [AppComponent],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+## Using the component
+Once you have imported the module, you can use the angular-hover-tile component in your Angular templates.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```html
+<lht-tile href="/home">
+  <div content>
+    <!-- Content for the default state of the tile goes here -->
+  </div>
+  <div hover-content>
+    <!-- Content for the hover state of the tile goes here -->
+  </div>
+</lht-tile>
+```
+The tile component takes two content slots: content and hover-content. The content in the content slot is displayed when the tile is in its default state, and the content in the hover-content slot is displayed when the tile is in its hover state.
 
-## Running unit tests
+The `href` attribute is optional and can be used to specify the destination of the tile link. If the href attribute is not present, the tile will not be clickable.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Styling the component
+The angular-hover-tile component has default styles, but you can override them by adding your own styles to your Angular component or global stylesheet.
 
-## Running end-to-end tests
+Here are the CSS classes that you can use to style the component:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+`.default`: Styles for the default state of the tile
 
-## Further help
+`.hover`: Styles for the hover state of the tile
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+For example, to change the background color of the tile in its default state, you can add the following styles to your component or global stylesheet:
+
+angular-hover-tile .default {
+  background-color: #f1f1f1;
+}

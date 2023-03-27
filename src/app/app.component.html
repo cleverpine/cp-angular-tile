@@ -1,6 +1,6 @@
 <div class="home-page">
   <div class="tiles">
-    <tile *ngFor="let tile of tiles" [href]="'/' + tile.route">
+    <lht-tile *ngFor="let tile of tiles" [href]="'/' + tile.route">
       <ng-container content>
         <h2 class="title">{{tile.title}}</h2>
       </ng-container>
@@ -8,6 +8,6 @@
         <p class="title">{{ tile.titleFull }}</p>
         <p class="description">{{ tile.description }}</p>
       </ng-container>
-    </tile>
+    </lht-tile>
   </div>
 </div>
