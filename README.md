@@ -51,6 +51,8 @@ Here are the CSS classes that you can use to style the component:
 
 For example, to change the background color of the tile in its default state, you can add the following styles to your component or global stylesheet:
 
+```scss
 angular-hover-tile .default {
   background-color: #f1f1f1;
 }
+```
