@@ -1,4 +1,4 @@
-Usage instructions for Tile Component
+# Tile Component
 The Tile Component provides a component that can be used to create a tile with hover effect. Here are the steps to use the library in your Angular project:
 
 ## Installation
