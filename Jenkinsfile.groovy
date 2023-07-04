@@ -33,7 +33,7 @@ pipeline {
 
       steps {
         script {
-          configFileProvider([configFile(fileId: 'npm_publish_settings', targetLocation: '.npmrc')]) {
+          configFileProvider([configFile(fileId: 'npm_publish_settings', targetLocation: './dist/tile/.npmrc')]) {
             sh """
               cd dist/tile
               npm publish
