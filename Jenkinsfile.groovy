@@ -31,19 +31,14 @@ pipeline {
         branch 'main'
       }
 
-      environment {
-          NPM_CONFIG_REGISTRY = 'https://lht.app.lufthansa.com/artifactory/api/npm/npm-local/'
-          NPM_CONFIG__AUTH = credentials('npm-publish-token')
-          NPM_CONFIG_ALWAYS_AUTH = true
-          NPM_CONFIG_EMAIL = 'hamtiebs@lht.dlh.de'
-      }
-
       steps {
         script {
-          sh """
-            cd dist/tile
-            npm publish
-          """
+          configFileProvider([configFile(fileId: 'npm_publish_settings', targetLocation: '.npmrc')]) {
+            sh """
+              cd dist/tile
+              npm publish
+            """
+          }
         }
       }
     }
