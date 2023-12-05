@@ -4,7 +4,7 @@ The Tile Component provides a component that can be used to create a tile with h
 ## Installation
 To use the Tile Component, you need to install it as a dependency in your Angular project. Run the following command in your project's root directory:
 
-`npm install @lht/tile --save`
+`npm install cp-lht-tile --save`
 
 This will install the library and save it as a dependency in your project's `package.json` file.
 
@@ -14,7 +14,7 @@ After installing the library, you need to import the TileModule in your Angular 
 ```typescript
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { TileModule } from '@lht/tile';
+import { TileModule } from 'cp-lht-tile';
 
 @NgModule({
   imports: [BrowserModule, TileModule],
